@@ -1,15 +1,15 @@
 ############################################################################################################
 #            This programm will encrypt & decrypt in caesar code but also brute-force it enjoy !           #
 ############################################################################################################
-def caesar_encrypt(cypher_plaintext:str, key:int) -> str: ### work fine
+def caesar_encrypt(cypher_plaintext:str, key:int) -> str:
     assert type(cypher_plaintext) == str and type(key) == int   ### cypher_plaintext must be str : <class 'str'> and key must be <class 'int'>
     return ''.join(chr((ord(cypher_plaintext[i].upper()) + key-65)%26+97) for i in range(len(cypher_plaintext))).upper()
 
-def caesar_decrypt(cypher:str, key:int) -> str: ## work fine
-    assert type(cypher) == str and type(key) == int 
+def caesar_decrypt(cypher:str, key:int) -> str: 
+    assert type(cypher) == str and type(key) == int  ### cypher must be str : <class 'str'> and key must be <class 'int'>
     return ''.join(chr((ord(cypher[i].upper()) - key-65)%26+97) for i in range(len(cypher))).upper()
 
-def caesar_brute_force(cypher:str) -> str: ### work fine
+def caesar_brute_force(cypher:str) -> str:
     assert type(cypher) == str ### cypher type must be str : <class 'str'>
     return print('\n'.join(caesar_decrypt(cypher,i).upper() for i in range(1,27)))
 
