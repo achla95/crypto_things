@@ -1,6 +1,12 @@
 ############################################################################################################
 #            This programm will encrypt & decrypt in caesar code but also brute-force it enjoy !           #
 ############################################################################################################
+##############################################################
+#    How to use it :                                         #
+#   On Windows's terminal -> python \path\to\your\file.py    #
+#   On Linux's terminal   -> python path/to/your/file.py     #
+##############################################################
+
 def caesar_encrypt(cypher_plaintext:str, key:int) -> str:
     assert type(cypher_plaintext) == str and type(key) == int   ### cypher_plaintext must be str : <class 'str'> and key must be <class 'int'>
     return ''.join(chr((ord(cypher_plaintext[i].upper()) + key-65)%26+97) for i in range(len(cypher_plaintext))).upper()
